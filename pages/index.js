@@ -65,5 +65,4 @@ export async function getStaticProps() {
       propertiesForRent: propertyForRent?.hits,
     }
   }
-
 }
