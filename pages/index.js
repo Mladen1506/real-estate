@@ -7,7 +7,7 @@ import { baseUrl, fetchApi } from '../utils/fetchApi';
 
 
 
-const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
+export const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, imageUrl }) => (
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner" />
     <Box p="5">
@@ -21,10 +21,9 @@ const Banner = ({ purpose, title1, title2, desc1, desc2, buttonText, linkName, i
   </Flex>
 );
 
-export default function Home({ propertiesForSale, propertiesForRent }) {
+const Home = ({ propertiesForSale, propertiesForRent }) => {
   return (
     <Box>
-      <h1>Welcome</h1>
       <Banner
         purpose='RENT A HOME'
         title1='Rental Homes For'
@@ -63,6 +62,8 @@ export async function getStaticProps() {
     props: {
       propertiesForSale: propertyForSale?.hits,
       propertiesForRent: propertyForRent?.hits,
-    }
-  }
+    },
+  };
 }
+
+export default Home;

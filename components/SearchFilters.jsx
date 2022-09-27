@@ -11,7 +11,7 @@ const SearchFilters = () => {
   const [filters, setFilters] = useState(filterData);
 
   const router = useRouter();
-  
+
   const searchProperties = (filterValues) => {
     const path = router.pathname;
     const { query } = router;
@@ -19,10 +19,26 @@ const SearchFilters = () => {
     const values = getFilterValues(filterValues);
 
     values.forEach((item) => {
-      query [item.name] = item.value
+      if(item.value && filterValues?.[item.name]) {
+        query [item.name] = item.value
+      }
     })
     router.push({ pathname: path, query })
-  }
+  };
+
+  // useEffect(() => {
+  //   if (searchTerm !== '') {
+  //     const fetchData = async () => {
+  //       setLoading(true);
+  //       const data = await fetchApi(`${baseUrl}/auto-complete?query=${searchTerm}`);
+  //       setLoading(false);
+  //       setLocationData(data?.hits);
+  //     };
+
+  //     fetchData();
+  //   }
+  // }, [searchTerm]);
+
 
   return (
     <Flex bg="gray.100" p="4" justifyContent="center" flexWrap="wrap">
