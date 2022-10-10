@@ -3,7 +3,7 @@
 ## Description
 
 Real Estate App was built to help people in search for desired property. Ability to find a property for rent or to buy. Deployed app 
-[here](https://superlative-narwhal-7b81e0.netlify.app/)
+[here](https://jsm-real-estate.netlify.app/)
 
 
 
